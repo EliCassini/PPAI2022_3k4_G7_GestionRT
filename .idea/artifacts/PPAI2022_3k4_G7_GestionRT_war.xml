@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="PPAI2022_3k4_G7_GestionRT:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>PPAI2022_3k4_G7_GestionRT</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="PPAI2022_3k4_G7_GestionRT-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="PPAI2022_3k4_G7_GestionRT:war exploded" />
+    </root>
+  </artifact>
+</component>
