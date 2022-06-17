@@ -12,5 +12,15 @@ public class CambioEstadoTurno {
         this.estadoTurno = estadoTurno;
     }
 
+    // ------------- Getters ------------------
+    public Boolean esEstadoActual(){
+        return this.fechaFin == null;
+    }
 
+    public Boolean esReservable() {
+        return this.estadoTurno.esReservable();
+    }
+    public Boolean esCancelable () {
+        return this.estadoTurno.esCancelable();
+    }
 }

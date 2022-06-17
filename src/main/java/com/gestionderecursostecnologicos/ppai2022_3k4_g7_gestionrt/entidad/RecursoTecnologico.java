@@ -1,7 +1,9 @@
 package com.gestionderecursostecnologicos.ppai2022_3k4_g7_gestionrt.entidad;
 
-import GestionRT.entidad.soporte.Modelo;
+import com.gestionderecursostecnologicos.ppai2022_3k4_g7_gestionrt.entidad.soporte.Modelo;
+import org.springframework.util.ObjectUtils;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -44,16 +46,43 @@ public class RecursoTecnologico {
 
 
 
-    public Object buscarDatosRT(List<CentroDeInvestigacion> centrosDeInvestigacion){
-        Object datosRt= new Object();
+    public void buscarDatosRT(List<CentroDeInvestigacion> centrosDeInvestigacion){
+        String nombreCI="";
+        if (this.buscarEstadoActual()==true){
+            /*
+            En teoria esta seria la dependencia con el Centro de Investigacion
+            Con esto, sabriamos si el nombre del CI al cual pertenece el RT
+             */
+            for (CentroDeInvestigacion ci: centrosDeInvestigacion) {
+               if(ci.esTuRecursoTecnologico(this)==true){
+                   nombreCI= ci.getNombre();
+               }
+            }
+            /*
+            Faltan modeloYmarca + nroInventario
+            Verificar que debemos devolver, si un objeto con todos los datos o una lista
+             */
+        }
+       Object datosRt= new Object();
 
-        return datosRt;
+
+        //return datosRt;
     }
-
-    public Estado buscarEstadoActual(){
-        Estado estadoActual= new Estado();
-        if()
-        return estadoActual;
+    /**
+     * Buscamos el EstadoActual del Recurso Tecnologico y verificamos que sea un Estado Reservable
+     * @return Booleano si es Reservable
+     */
+    public Boolean buscarEstadoActual(){
+        Boolean esReservable= false;
+        if(!cambiosEstadosRT.isEmpty()){
+            for (CambioEstadoRT c:cambiosEstadosRT) {
+                if(c.esEstadoActual()){
+                    esReservable= c.esReservable();
+                    break;
+                    }
+                }
+            }
+        return esReservable;
     }
 
 
