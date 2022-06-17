@@ -13,15 +13,18 @@ public class CambioEstadoRT {
     }
 
     // ------------- Getter -----------------
+
     public Estado getEstado() {
         return this.estado;
     }
+    public String getNombre () { return  this.estado.getNombre();}
     public boolean esEstadoActual() {
         return this.fechaHasta == null;
     }
     public boolean esReservable () {
         return this.estado.esReservable();
     }
+
     // ------------- Setter -----------------
     public void setFinDeCambioDeEstado() {
         this.fechaHasta = new Date();

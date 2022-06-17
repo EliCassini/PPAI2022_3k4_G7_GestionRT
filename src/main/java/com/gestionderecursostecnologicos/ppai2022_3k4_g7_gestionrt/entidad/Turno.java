@@ -7,4 +7,9 @@ public class Turno {
     private Date fechaHoraFin;
     private Date fechaCreacion;
     private AsignacionCientifico cientificoAsignado;
+
+    public void Turno (AsignacionCientifico cientifico){
+        this.fechaHoraInicio = new Date();
+    }
+
 }

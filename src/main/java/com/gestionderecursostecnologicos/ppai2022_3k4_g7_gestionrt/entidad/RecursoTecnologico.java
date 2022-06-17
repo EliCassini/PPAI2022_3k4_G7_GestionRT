@@ -43,9 +43,6 @@ public class RecursoTecnologico {
         return this.tipoDeRecurso.esTipo(tipoRecursoTecnologico);
     }
 
-
-
-
     public void buscarDatosRT(List<CentroDeInvestigacion> centrosDeInvestigacion){
         String nombreCI="";
         if (this.buscarEstadoActual()==true){
