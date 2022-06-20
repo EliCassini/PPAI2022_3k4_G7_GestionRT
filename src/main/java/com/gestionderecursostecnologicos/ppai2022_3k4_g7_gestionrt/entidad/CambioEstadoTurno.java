@@ -7,8 +7,9 @@ public class CambioEstadoTurno {
     private Date fechaFin;
     private Estado estadoTurno;
 
-    public void CambioEstadoTurno(Estado estadoTurno) {
-        this.fechaFin = new Date();
+
+    public CambioEstadoTurno( Estado estadoTurno) {
+        this.fechaInicio = new Date();
         this.estadoTurno = estadoTurno;
     }
 
@@ -16,11 +17,18 @@ public class CambioEstadoTurno {
     public Boolean esEstadoActual(){
         return this.fechaFin == null;
     }
+    public Estado getEstado() { return this.estadoTurno; }  // Devuelve el objeto?
 
     public Boolean esReservable() {
         return this.estadoTurno.esReservable();
     }
     public Boolean esCancelable () {
         return this.estadoTurno.esCancelable();
+    }
+
+    // --------------- Setters -------------------
+
+    public void setFechaHoraHasta() {
+        this.fechaFin = new Date();
     }
 }
